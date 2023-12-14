@@ -1,34 +1,34 @@
 from tkinter import *
 import random
 
-# Generate a random number between 1 and 100
-secret_number = random.randint(1, 100)
+# Here i want the programm to generate a random number between 1 and 100
+secret = random.randint(1, 100)
 
-# Function to check the player's guess
+# here i built a function to check the player's guess
 def check_guess():
     guess = int(number.get())
-    if guess == secret_number:
+    if guess == secret:
         result_label.config(text="Congratulations! You guessed it!")
-    elif guess < secret_number:
+    elif guess < secret:
         result_label.config(text="Try a higher number.")
     else:
         result_label.config(text="Try a lower number.")
 
-# Create the main window
+# here i create the main window
 window = Tk()
 window.title("Guess the Number")
 
-# Create a label and entry for guessing
+# here i create a label and entry for guessing
 Label(window, text="Guess the number (1-100):").pack()
 number = Entry(window)
 number.pack()
 
-# Create a button to check the guess
+# here i create a button to check the guess
 Button(window, text="Check Guess", command=check_guess).pack()
 
-# Create a label for the result
+# here i create a label for the result
 result_label = Label(window, text="")
 result_label.pack()
 
-# Start the Tkinter main loop
+# this to start the Tkinter main loop
 window.mainloop()
